@@ -1,10 +1,10 @@
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - 'main'
 
 jobs:
-  create-release:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -12,7 +12,27 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Generate changelog, bump and tag version
+        id: bump
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.github_token }}
+          git-message: 'chore(release): {version}'
+          preset: 'angular'
+          tag-prefix: 'v'
+          output-file: 'CHANGELOG.md'
+          version-file: 'package.json'
+          version-path: 'version'
+          skip-version-file: 'false'
+          skip-commit: 'false'
+          skip-git-pull: 'true'
+          skip-on-empty: 'true'
+          skip-ci: 'true'
+          create-summary: 'true'
+          pre-release: 'false'
+
       - name: Create release
+        if: steps.bump.outputs.skipped != 'true'
         uses: softprops/action-gh-release@v1
         with:
           draft: false
