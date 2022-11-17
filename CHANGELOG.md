@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/vtertre/gh-actions-playground/compare/v0.2.2...v0.3.0) (2022-11-17)
+
+
+### Features
+
+* create unique release workflow ([9e920bc](https://github.com/vtertre/gh-actions-playground/commit/9e920bc1ac2de3f292a9b8736aafd187c662cfa1))
+
+
+
 ## [0.2.2](https://github.com/vtertre/gh-actions-playground/compare/v0.2.1...v0.2.2) (2022-11-17)
 
 
