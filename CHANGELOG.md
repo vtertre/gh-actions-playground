@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/vtertre/gh-actions-playground/compare/v0.2.0...v0.2.1) (2022-11-17)
+
+
+### Bug Fixes
+
+* use correct tag semantic ([63f29d9](https://github.com/vtertre/gh-actions-playground/commit/63f29d9f68835d6ec74b1ce860b0a469d6924160))
+
+
+
 # [0.2.0](https://github.com/vtertre/gh-actions-playground/compare/v0.1.0...v0.2.0) (2022-11-17)
 
 
