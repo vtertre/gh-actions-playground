@@ -1,0 +1,8 @@
+{
+  "name": "gh-actions-playground",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtertre/gh-actions-playground.git"
+  }
+}

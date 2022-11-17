@@ -2,7 +2,6 @@ on:
   push:
     branches-ignore:
       - 'main'
-      - 'release/**'
 
 jobs:
   echo:
@@ -12,4 +11,4 @@ jobs:
         with:
           fetch-depth: 0
 
-      - run: cat README.md
+      - run: cat .github/workflows/ci.yml
