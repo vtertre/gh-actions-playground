@@ -1,3 +1,14 @@
+## [0.2.2](https://github.com/vtertre/gh-actions-playground/compare/v0.2.1...v0.2.2) (2022-11-17)
+
+
+### Bug Fixes
+
+* trigger ([566a12c](https://github.com/vtertre/gh-actions-playground/commit/566a12c15db9e63481d077320689ab569abb9c1c))
+* trigger for release workflow ([692d3b7](https://github.com/vtertre/gh-actions-playground/commit/692d3b79d75127d8c5a8d4eb014995005e13677d))
+* yaml semantic ([3ecc85d](https://github.com/vtertre/gh-actions-playground/commit/3ecc85da78df20bb1e586ae5095a41977164b4c8))
+
+
+
 ## [0.2.1](https://github.com/vtertre/gh-actions-playground/compare/v0.2.0...v0.2.1) (2022-11-17)
 
 
