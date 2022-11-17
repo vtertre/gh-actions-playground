@@ -1,3 +1,12 @@
+## [0.3.1](https://github.com/vtertre/gh-actions-playground/compare/v0.3.0...v0.3.1) (2022-11-17)
+
+
+### Bug Fixes
+
+* provide tag name to release step ([c528997](https://github.com/vtertre/gh-actions-playground/commit/c528997f06735c74d97c2a01a810f62f3f126186))
+
+
+
 # [0.3.0](https://github.com/vtertre/gh-actions-playground/compare/v0.2.2...v0.3.0) (2022-11-17)
 
 
@@ -33,15 +42,6 @@
 ### Features
 
 * add workflow to create release ([7bf8642](https://github.com/vtertre/gh-actions-playground/commit/7bf86422e4efdd7f19f355b988eadbb41300444a))
-
-
-
-# [0.1.0](https://github.com/vtertre/gh-actions-playground/compare/990b45413da877df9efce240af911f7ea21deed8...v0.1.0) (2022-11-17)
-
-
-### Features
-
-* add conventional changelog action ([990b454](https://github.com/vtertre/gh-actions-playground/commit/990b45413da877df9efce240af911f7ea21deed8))
 
 
 
