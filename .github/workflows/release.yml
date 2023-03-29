@@ -4,7 +4,7 @@ on:
       - 'main'
 
 jobs:
-  release:
+  bump:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -13,8 +13,7 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.JIRHUB_TOKEN }}
 
-      - name: Generate changelog, bump and tag version
-        id: bump
+      - name: Generate changelog and bump version
         uses: TriPSs/conventional-changelog-action@v3
         with:
           github-token: ${{ secrets.JIRHUB_TOKEN }}
@@ -31,9 +30,44 @@ jobs:
           skip-ci: 'true'
           create-summary: 'true'
           pre-release: 'false'
+          skip-tag: 'true'
+
+  verify:
+    needs: [bump]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+
+      - run: cat package.json
+
+  release:
+    needs: [verify]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.workflow_run.head_branch }}
+          token: ${{ secrets.JIRHUB_TOKEN }}
+
+      - name: Tag version
+        id: tag
+        uses: TriPSs/conventional-changelog-action@v3
+        with:
+          github-token: ${{ secrets.JIRHUB_TOKEN }}
+          skip-version-file: 'true'
+          skip-commit: 'true'
+          skip-git-pull: 'true'
+          skip-on-empty: 'true'
+          create-summary: 'false'
+          pre-release: 'false'
 
       - name: Create release
-        if: steps.bump.outputs.skipped != 'true'
+        if: steps.tag.outputs.skipped != 'true'
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.bump.outputs.tag }}
